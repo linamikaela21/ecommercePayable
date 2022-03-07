@@ -1,0 +1,52 @@
+.header {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+
+  .logo-container {
+    height: 100%;
+    width: 70px;
+    padding: 25px;
+  }
+
+  .options {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .option {
+      padding: 10px 15px;
+      text-decoration: none;
+      color: #000;
+      font-size: xx-large;
+      cursor: pointer;
+    }
+
+    .item-count-div {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+
+    .item-count {
+      position: relative;
+    }
+
+    .item-icon {
+      display: flex;
+    }
+
+    .item-count span {
+      font-size: large;
+      font-weight: bolder;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+  }
+}
