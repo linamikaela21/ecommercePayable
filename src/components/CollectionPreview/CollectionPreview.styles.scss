@@ -1,11 +1,14 @@
 .collection-preview {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 
   .title {
-    font-size: 28px;
+    font-size: 50px;
     margin-bottom: 25px;
+    margin-left: 35px;
   }
 
   .preview {

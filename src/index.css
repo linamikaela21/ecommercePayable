@@ -1,9 +1,8 @@
 body {
-  margin: 20px;
-  font-family: 'Bigelow Rules', cursive;
-  -webkit-font-smoothing: antialiased;
+  margin: 5px;
+  font-family: 'Bigelow Rules', cursive;  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: 25px 60px;
+  padding: 15px 15px;
 }
 
 code {

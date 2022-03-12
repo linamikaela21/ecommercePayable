@@ -1,5 +1,5 @@
 .checkout-page {
-  width: 90%;
+  width: 70%;
   min-height: 90vh;
   display: flex;
   flex-direction: column;
@@ -8,24 +8,48 @@
 
   .checkout-header {
     width: 100%;
-    padding: 12px 0;
+    padding: 10px 0;
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid darkgrey;
+    background-color: rgb(221, 233, 233);
 
     .header-block {
       text-transform: capitalize;
-      width: 25%;
+      width: 23%;
+
 
       &:last-child {
         width: 8%;
       }
     }
+
+    .header-block span {
+      font-size: 33px;
+      font-weight: bolder;
+    }
   }
 
   .total {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(221, 233, 233);
     margin-top: 30px;
     margin-left: auto;
     font-size: 36px;
+    font-weight: bolder;
+  }
+
+  button {
+    margin-top: 50px;
+  }
+
+  .test-warning {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 35px;
+    color: red;
   }
 }

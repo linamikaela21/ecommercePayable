@@ -1,13 +1,46 @@
-import React from 'react';
-import { CollectionPreview } from '../../components/CollectionPreview/CollectionPreview';
-import { SHOP_DATA as data } from './dataShop';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Route } from 'react-router-dom';
+import { CollectionOverview } from '../../components/CollectionOverview/CollectionOverview';
+import { CollectionPage } from '../CollectionPage/CollectionPage';
+import { fetchCollectionStart } from '../../redux/shop/actionsShop';
+import { withSpinner } from '../../components/Spinner/Spinner';
 
-export const ShopPage = () => {
+const CollectionOverviewWithSpinner = withSpinner(CollectionOverview);
+const CollectionPageWithSpinner = withSpinner(CollectionPage);
+
+export const ShopPage = ({ match }) => {
+  const dispatch = useDispatch();
+  const isFetchingCollection = useSelector((state) => state.shop.isFetching);
+
+  useEffect(() => {
+    dispatch(fetchCollectionStart());
+  }, []);
+
   return (
     <div className="shop-page">
-      {data.map(({ id, ...otherCollectionProps }) => (
-        <CollectionPreview key={id} {...otherCollectionProps} />
-      ))}
+      <div>
+        <Route
+          exact
+          path={`${match.path}`}
+          render={(props) => (
+            <CollectionOverviewWithSpinner
+              isLoading={isFetchingCollection}
+              {...props}
+            />
+          )}
+        />
+        <Route
+          exact
+          path={`${match.path}/:collectionId`}
+          render={(props) => (
+            <CollectionPageWithSpinner
+              isLoading={isFetchingCollection}
+              {...props}
+            />
+          )}
+        />
+      </div>
     </div>
   );
 };

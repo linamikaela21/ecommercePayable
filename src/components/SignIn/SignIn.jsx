@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import './SignIn.styles.scss';
 import { FormInput } from '../FormInput/FormInput';
 import { Button } from '../Button/Button';
-import { signInWithGoogle } from '../../Firebase/firebase.utils';
 import { FcGoogle } from 'react-icons/fc';
+import {
+  emailSignInStart,
+  googleSignInStart,
+} from '../../redux/user/actionsUser';
 
 export const SignIn = () => {
+  const dispatch = useDispatch();
   const [user, setUser] = useState({
     email: '',
     password: '',
@@ -13,7 +18,7 @@ export const SignIn = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setUser({ email: '', password: '' });
+    dispatch(emailSignInStart({ ...user }));
   };
 
   const handleChange = (e) => {
@@ -45,10 +50,15 @@ export const SignIn = () => {
           handleChange={(e) => handleChange(e)}
         />
         <div className="buttons">
-          <Button type="submit" childen={'Sing In'} />
           <Button
+            type="button"
+            childen={'Sing In'}
+            onClick={(e) => handleSubmit(e)}
+          />
+          <Button
+            type="button"
             childen={<FcGoogle size={35} />}
-            onClick={signInWithGoogle}
+            onClick={() => dispatch(googleSignInStart())}
             isGoogleSingIn
           />
         </div>

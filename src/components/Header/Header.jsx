@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Header.styles.scss';
 import { ReactComponent as Logo } from '../../assets/crown.svg';
-import { auth } from '../../../src/Firebase/firebase.utils';
 import { BsCart } from 'react-icons/bs';
 import { CartDropDown } from '../CartDropDown/CartDropDown';
 import { cartHidden } from '../../redux/cart/actionsCart';
+import { signOutStart } from '../../redux/user/actionsUser';
 
 export const Header = () => {
   const dispatch = useDispatch();
@@ -37,9 +37,12 @@ export const Header = () => {
         <Link to="/contact" className="option">
           CONTACT
         </Link>
-        {currentUser?.uid ? (
-          <Link to="/" className="option" onClick={() => auth.signOut()}>
-            <Redirect to="/" />
+        {currentUser ? (
+          <Link
+            to="/"
+            className="option"
+            onClick={() => dispatch(signOutStart())}
+          >
             SIGN OUT
           </Link>
         ) : (
