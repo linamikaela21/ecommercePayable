@@ -1,4 +1,4 @@
-# TEST INTRO
+# ECOMMERCE REACT APP
 
 This is a simple Ecommerce where you can look a list of categories with their products, add them in a cart and simulate a payment with a fake card using React Stripe library
 

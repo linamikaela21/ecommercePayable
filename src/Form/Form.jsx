@@ -9,12 +9,12 @@ export const Form = () => {
     handleSubmit,
   } = useForm();
 
-  const [entradas, setEntradas] = useState([]);
+  const [inputs, setInputs] = useState([]);
 
   const onSubmit = async (data, e) => {
     e.target.reset();
     const info = { id: Math.trunc(Math.random() * 1000), ...data };
-    await setEntradas([...entradas, info]);
+    await setInputs([...inputs, info]);
   };
 
   return (
@@ -125,9 +125,9 @@ export const Form = () => {
             SENT
           </button>
         </div>
-        <div className={entradas.length ? 'd-flex card p-1 m-1 bg-dark' : null}>
+        <div className={inputs.length ? 'd-flex card p-1 m-1 bg-dark' : null}>
           <div className="card text-lg f-2 m-1">
-            {entradas.map((item) => (
+            {inputs.map((item) => (
               <div key={item.id} className="text-lg f-1 m-1">
                 <h1 className="card-title text-lg f-2 m-1">
                   {item.firstName} {item.lastName}
