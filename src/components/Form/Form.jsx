@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { Button } from '../Button/Button';
 import './Form.style.scss';
 
 export const Form = () => {
@@ -22,10 +23,7 @@ export const Form = () => {
       className="form-row justify-content-center align-items-center w-100"
       style={{ backgroundColor: 'rgb(221, 233, 233)' }}
     >
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="form-col justify-content-center align-items-center"
-      >
+      <form onSubmit={handleSubmit(onSubmit)} className="group">
         <div className="form-container">
           <h1 className="d-block f-1 font-weight-bold">
             DO YOU HAVE ANY QUESTION ?
@@ -49,7 +47,7 @@ export const Form = () => {
               maxLength: 20,
             })}
             placeholder="First name"
-            className="form-control my-2 f-1"
+            className="form-input"
           />
 
           {errors.firstName && (
@@ -68,7 +66,7 @@ export const Form = () => {
               maxLength: 20,
             })}
             placeholder="Last name"
-            className="form-control my-2"
+            className="form-input"
           />
 
           {errors.lastName && (
@@ -87,7 +85,7 @@ export const Form = () => {
               maxLength: 50,
             })}
             placeholder="Email"
-            className="form-control my-2"
+            className="form-input"
           />
 
           {errors.email && (
@@ -106,7 +104,7 @@ export const Form = () => {
               maxLength: 200,
             })}
             placeholder="Questions"
-            className="form-control my-2"
+            className="form-input"
             rows="4"
             cols="50"
           />
@@ -118,12 +116,7 @@ export const Form = () => {
           )}
         </div>
         <div className="form-row justify-content-center align-items-center">
-          <button
-            type="submit"
-            className="btn btn-outline-primary btn-bg w-50 m-3"
-          >
-            SENT
-          </button>
+          <Button inverted childen={'SEND'} />
         </div>
         <div className={inputs.length ? 'd-flex card p-1 m-1 bg-dark' : null}>
           <div className="card text-lg f-2 m-1">

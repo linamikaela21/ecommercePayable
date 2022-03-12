@@ -9,7 +9,7 @@ import { SignInAndSignUp } from '../src/pages/SignIn-SignUp/SignIn-SignUp';
 import { checkUserSession } from './redux/user/actionsUser';
 import { CheckOut } from './pages/CheckOut/CheckOut';
 import { fetchCollectionStart } from './redux/shop/actionsShop';
-import { Form } from './Form/Form';
+import { Form } from '../src/components/Form/Form';
 
 export const App = () => {
   const dispatch = useDispatch();

@@ -21,3 +21,6 @@ Install the dependencies and devDependencies and start the server.
 2. Run `npm install`
 3. Run `npm start`
 ```
+
+# DEPLOYMENT
+https://ecommerce-payable.herokuapp.com/
