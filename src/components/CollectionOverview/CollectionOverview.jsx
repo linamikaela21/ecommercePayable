@@ -8,7 +8,10 @@ export const CollectionOverview = () => {
     ? Object.keys(collections).map((id) => collections[id])
     : [];
   return (
-    <div className="collections-overview">
+    <div
+      className="collections-overview"
+      data-testid="test-id-collection-overview"
+    >
       {collectionArray.map(({ id, ...otherCollectionProps }) => (
         <CollectionPreview key={id} {...otherCollectionProps} />
       ))}

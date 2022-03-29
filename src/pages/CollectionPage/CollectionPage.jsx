@@ -8,7 +8,7 @@ export const CollectionPage = () => {
   const collections = useSelector((state) => state.shop.collections);
   const { title, items } = collections[collectionId];
   return (
-    <div className="collection-page">
+    <div className="collection-page" data-testid="test-id-CollectionPage">
       <h2 className="title">{title}</h2>
       <div className="items">
         {items.map((item) => (

@@ -4,7 +4,10 @@ import { CollectionItem } from '../CollectionItem/CollectionItem';
 
 export const CollectionPreview = ({ title, items }) => {
   return (
-    <div className="collection-preview">
+    <div
+      className="collection-preview"
+      data-testid="test-id-collection-preview"
+    >
       <h1 className="title">{title.toUpperCase()}</h1>
       <div className="preview">
         {items

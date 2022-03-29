@@ -8,9 +8,10 @@ export const Button = ({
   ...otherProps
 }) => (
   <button
-    className={`${isGoogleSingIn ? 'google-sign-in' : ''} ${
-      inverted ? 'inverted' : ''
-    } button`}
+    data-testid="test-id-button"
+    className={`${isGoogleSingIn ? 'google-sign-in ' : ''}${
+      inverted ? 'inverted ' : ''
+    }button`}
     {...otherProps}
   >
     {childen}

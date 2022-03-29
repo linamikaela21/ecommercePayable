@@ -20,7 +20,7 @@ export const CheckOut = () => {
   }, [cartItemsArray]);
 
   return (
-    <div className="checkout-page">
+    <div className="checkout-page" data-testid="test-id-checkoutPage">
       <div className="checkout-header">
         <div className="header-block">
           <span>Product</span>

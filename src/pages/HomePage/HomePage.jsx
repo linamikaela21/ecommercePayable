@@ -4,7 +4,7 @@ import './Homepage.styles.scss';
 
 export const HomePage = () => {
   return (
-    <div className="homePage">
+    <div className="homePage" data-testid="test-id-homePage">
       <Directory />
     </div>
   );

@@ -18,7 +18,7 @@ export const ShopPage = ({ match }) => {
   }, []);
 
   return (
-    <div className="shop-page">
+    <div className="shop-page" data-testid="test-id-ShopPage">
       <div>
         <Route
           exact

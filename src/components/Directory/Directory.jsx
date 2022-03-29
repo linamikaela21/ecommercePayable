@@ -6,7 +6,7 @@ import { MenuItem } from '../Menu-Item/Menu-item';
 export const Directory = () => {
   const sections = useSelector((state) => state.directory.sections);
   return (
-    <div className="directory-menu">
+    <div className="directory-menu" data-testid="test-id-directory-menu">
       {sections?.map(({ id, ...otherSectionProps }) => (
         <MenuItem key={id} {...otherSectionProps} />
       ))}

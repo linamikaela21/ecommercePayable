@@ -8,7 +8,11 @@ export const CollectionItem = ({ item }) => {
   const dispatch = useDispatch();
   const { name, price, imageUrl } = item;
   return (
-    <div className="collection-item">
+    <div
+      key={item.id}
+      className="collection-item"
+      data-testid="test-id-collection-item"
+    >
       <div
         className="image"
         style={{
@@ -20,6 +24,7 @@ export const CollectionItem = ({ item }) => {
         <span className="price">${price}</span>
       </div>
       <Button
+        data-testid="test-id-collection-item-button"
         childen={`Add to cart`}
         inverted
         onClick={() => dispatch(addItemToCart(item))}

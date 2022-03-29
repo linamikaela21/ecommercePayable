@@ -12,17 +12,19 @@ export const StripeCheckoutButton = ({ price }) => {
   };
 
   return (
-    <StripeCheckout
-      label="Pay Now"
-      name="Lali Company"
-      billingAddress
-      shippingAddress
-      image="https://image.shutterstock.com/image-vector/money-bag-flat-illustration-dollars-260nw-1927192892.jpg"
-      description={`Your total is $${price}`}
-      amount={priceForStripe}
-      panelLabel="Pay Now"
-      token={onToken}
-      stripeKey={publishableKey}
-    />
+    <div data-testid="test-id-button-checkout">
+      <StripeCheckout
+        label="Pay Now"
+        name="Lali Company"
+        billingAddress
+        shippingAddress
+        image="https://image.shutterstock.com/image-vector/money-bag-flat-illustration-dollars-260nw-1927192892.jpg"
+        description={`Your total is $${price}`}
+        amount={priceForStripe}
+        panelLabel="Pay Now"
+        token={onToken}
+        stripeKey={publishableKey}
+      />
+    </div>
   );
 };
